@@ -1,4 +1,4 @@
-<title>Toy Train Catalog</title>
+<title>Research Use Only Bulk orders</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
 
@@ -124,7 +124,7 @@
     font-size: 1.05rem;
     color: var(--text-muted);
     margin: 0;
-    max-width: 62ch;
+    max-width: 92ch;
   }
 
   /* ---------- Contact cards ---------- */
@@ -187,6 +187,75 @@
     text-decoration: none;
   }
   .card dd a:hover { text-decoration: underline; }
+
+  /* ---------- Detailed Information dropdown ---------- */
+details.detail-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 48px;
+  overflow: hidden;
+}
+
+details.detail-block summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 24px;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+details.detail-block summary::-webkit-details-marker { display: none; }
+details.detail-block summary::marker { content: ""; }
+
+details.detail-block summary:focus-visible {
+  outline: 2px dashed var(--accent);
+  outline-offset: -2px;
+  border-radius: 6px;
+}
+
+details.detail-block .chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--accent);
+  transition: transform 0.2s ease;
+}
+
+details.detail-block[open] .chevron {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  details.detail-block .chevron { transition: none; }
+}
+
+details.detail-block .detail-content {
+  padding: 18px 24px 22px;
+  border-top: 1px solid var(--border);
+}
+
+details.detail-block .detail-content p {
+  margin: 0 0 14px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  max-width: 68ch;
+}
+
+details.detail-block .detail-content p:last-child {
+  margin-bottom: 0;
+}
+
+details.detail-block .detail-content strong {
+  color: var(--text);
+}
 
   /* ---------- Table ---------- */
   .catalog-heading {
@@ -291,32 +360,99 @@
 <div class="page">
 
   <div class="edit-note">
-    <strong>Editable page</strong> — open this file in a text/HTML editor and replace the bracketed placeholders (business name, contact details, products) with your own.
+    <strong>Announcements</strong> — Currently no pending announcements, check up as we may do flash sale days.
   </div>
 
   <header class="masthead">
     <p class="eyebrow">Wholesale Product Catalog</p>
-    <h1 class="business-name">[Your Business Name]</h1>
-    <p class="tagline">[One line about what you sell — e.g. "Wholesale kids' wooden train sets and accessories."]</p>
+    <!--h1 class="business-name">[Your Business Name]</h1-->
+    <p class="tagline">We offer research grade products at near-wholesale, bulk sale pricing — 
+      we do build in a small margin for our time, but we keep it as close to our own cost as we can. <br><br>
+
+
   </header>
+  <details class="detail-block">
+  <summary>
+    <span>Detailed Information</span>
+    <svg class="chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </summary>
+  <div class="detail-content">
+    <p>There are two ways to order. For immediate purchases, we submit orders to our vendor every Sunday, 
+    and shipping generally takes 4–5 days. As soon as the products arrive, we'll reach out to arrange hand-off. 
+    We also run bulk orders monthly, where the higher MOQ lets us bring prices down even further. </p>
+
+    <p>We prefer to work in bulk, but we do sometimes have individual products on hand — those come at a premium price. 
+    Contact your local distributor for availability and current pricing.</p>
+
+    <p><strong>Note:</strong> an immediate order shipped on its own may carry an $85 shipping fee. If other buyers are part of the same shipment, we split that cost evenly across everyone.</p>
+  </div>
+</details>
+
+<details class="detail-block">
+  <summary>
+    <span>Certificate of Analysis (COA) Disclosure</span>
+    <svg class="chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </summary>
+  <div class="detail-content">
+    <p>Certificates of Analysis (COAs) may be available for certain products upon request. Unless specifically stated otherwise, these COAs are provided to us by our suppliers and represent testing associated with products or batches supplied by those vendors.</p>
+
+    <p>We do not independently perform, commission, or pay for the testing represented by supplier-provided COAs. We also do not independently test every product, vial, or batch received.</p>
+
+    <p>We work with vendors that provide products represented as meeting their stated specifications and may make the corresponding supplier documentation available to our customers for research reference and transparency.</p>
+
+    <p>By relying on supplier testing rather than commissioning independent testing for every batch, we are able to reduce testing expenses and offer products at more accessible prices for research and experimental applications.</p>
+
+    <p>Supplier-provided COAs should not be interpreted as independent verification performed by us, nor do we represent that a COA independently verifies every individual unit sold.</p>
+
+    <p><strong>FOR RESEARCH USE ONLY. NOT FOR HUMAN OR VETERINARY USE.</strong></p>
+  </div>
+</details>
+
+<details class="detail-block">
+  <summary>
+    <span>Research Use Only (RUO) Statement</span>
+    <svg class="chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </summary>
+  <div class="detail-content">
+    <p>All products offered are sold strictly for research and laboratory use only.</p>
+
+    <p>These products are NOT intended for human or veterinary use, consumption, administration, diagnosis, treatment, prevention, or cure of any disease or medical condition. Products are not intended for use as foods, drugs, cosmetics, dietary supplements, household products, or medical devices.</p>
+
+    By purchasing , the purchaser represents and agrees that:
+    <ul>
+    <li>Products will be used solely for legitimate research or laboratory purposes.</li>
+    <li>Products will not be administered to, consumed by, or otherwise used on humans or animals.</li>
+    <li>The purchaser is responsible for determining and complying with all applicable federal, state, and local laws and regulations governing the purchase, possession, handling, storage, and use of the products.</li>
+    <li>The purchaser has the appropriate knowledge, facilities, procedures, and safety controls necessary to handle the products safely.</li>
+    <li>We do not provide medical advice, dosing instructions, treatment recommendations, or instructions for human or veterinary administration.</li></ul>
+
+    <p>Any technical information provided including product specifications, analytical data, certificates of analysis, chemical information, or published research references, is provided solely for informational and research purposes and should not be interpreted as instructions or recommendations for human or veterinary use.</p>
+
+    <p><strong>FOR RESEARCH USE ONLY. NOT FOR HUMAN OR VETERINARY USE.</strong></p>
+  </div>
+</details>
 
   <section class="contacts" aria-label="Contacts">
     <div class="card">
-      <p class="card-role">Owner</p>
-      <p class="card-name">[Your Name]</p>
+      <p class="card-role">Chula Vista</p>
+      <p class="card-name">Ignant</p>
       <dl>
-        <dt>Phone</dt><dd><a href="tel:+10000000000">[Phone Number]</a></dd>
-        <dt>Email</dt><dd><a href="mailto:you@example.com">[you@example.com]</a></dd>
-        <dt>Location</dt><dd>[City, State]</dd>
+        <dt>Phone</dt><dd><a href="tel:+10000000000">WhatsApp: IgnantGaming</a></dd>
+        <dt>Location</dt><dd>Chula Vista</dd>
       </dl>
     </div>
     <div class="card">
-      <p class="card-role">Business Partner</p>
-      <p class="card-name">[Partner's Name]</p>
+      <p class="card-role">Riverside</p>
+      <p class="card-name">Thanos</p>
       <dl>
         <dt>Phone</dt><dd><a href="tel:+10000000000">[Phone Number]</a></dd>
-        <dt>Email</dt><dd><a href="mailto:partner@example.com">[partner@example.com]</a></dd>
-        <dt>Location</dt><dd>[City, State]</dd>
+        <dt>Location</dt><dd>Riverside</dd>
       </dl>
     </div>
   </section>
@@ -324,7 +460,7 @@
   <section aria-label="Product catalog">
     <div class="catalog-heading">
       <h2>Products</h2>
-      <span class="catalog-count">8 SKUs</span>
+      <span class="catalog-count">133 SKUs</span>
     </div>
 
     <div class="table-wrap">
@@ -339,51 +475,796 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="row-set">
-            <td class="sku">KT1</td>
-            <td class="product-name" rowspan="4">Train Set</td>
-            <td>12 Pieces</td>
-            <td class="price">$10.00</td>
-            <td class="category-name" rowspan="4">Kids Toys</td>
+                    <tr class="row-tint-a">
+            <td class="sku">SM2</td>
+            <td class="product-name" rowspan="8">Semaglutide</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$100.00</td>
+            <td class="category-name" rowspan="24">Weight Loss</td>
           </tr>
-          <tr class="row-set">
-            <td class="sku">KT2</td>
-            <td>24 Pieces</td>
-            <td class="price">$13.00</td>
+          <tr class="row-tint-a">
+            <td class="sku">SM5</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$140.00</td>
           </tr>
-          <tr class="row-set">
-            <td class="sku">KT3</td>
-            <td>36 Pieces</td>
-            <td class="price">$18.00</td>
+          <tr class="row-tint-a">
+            <td class="sku">SM10</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$160.00</td>
           </tr>
-          <tr class="row-set">
-            <td class="sku">KT4</td>
-            <td>50 Pieces</td>
-            <td class="price">$22.00</td>
+          <tr class="row-tint-a">
+            <td class="sku">SM15</td>
+            <td>15mg * 10 vials</td>
+            <td class="price">$180.00</td>
           </tr>
-          <tr class="row-car group-divider">
-            <td class="sku">TC1</td>
-            <td class="product-name">Train Car</td>
-            <td>1 Piece</td>
-            <td class="price">$5.00</td>
-            <td class="category-name" rowspan="4">Kids Toys</td>
+          <tr class="row-tint-a">
+            <td class="sku">SM20</td>
+            <td>20mg * 10 vials</td>
+            <td class="price">$200.00</td>
           </tr>
-          <tr class="row-bridge group-divider">
-            <td class="sku">TB1</td>
-            <td class="product-name" rowspan="3">Train Bridge</td>
-            <td>1 Piece</td>
-            <td class="price">$4.00</td>
+          <tr class="row-tint-a">
+            <td class="sku">SM30</td>
+            <td>30mg * 10 vials</td>
+            <td class="price">$240.00</td>
           </tr>
-          <tr class="row-bridge">
-            <td class="sku">TB2</td>
-            <td>1 Piece</td>
-            <td class="price">$7.00</td>
+          <tr class="row-tint-a">
+            <td class="sku">SM40</td>
+            <td>40mg * 10 vials</td>
+            <td class="price">$280.00</td>
           </tr>
-          <tr class="row-bridge">
-            <td class="sku">TB3</td>
-            <td>1 Piece</td>
-            <td class="price">$22.00</td>
+          <tr class="row-tint-a">
+            <td class="sku">SM50</td>
+            <td>50mg * 10 vials</td>
+            <td class="price">$310.00</td>
           </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">TR10</td>
+            <td class="product-name" rowspan="9">Tirzepatide</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$160.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">TR15</td>
+            <td>15mg * 10 vials</td>
+            <td class="price">$190.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">TR20</td>
+            <td>20mg * 10 vials</td>
+            <td class="price">$210.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">TR30</td>
+            <td>30mg * 10 vials</td>
+            <td class="price">$260.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">TR40</td>
+            <td>40mg * 10 vials</td>
+            <td class="price">$300.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">TR50</td>
+            <td>50mg * 10 vials</td>
+            <td class="price">$390.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">TR60</td>
+            <td>60mg * 10 vials</td>
+            <td class="price">$400.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">TR100</td>
+            <td>100mg * 10 vials</td>
+            <td class="price">$580.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">TR120</td>
+            <td>120mg * 10 vials</td>
+            <td class="price">$640.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">RT5</td>
+            <td class="product-name" rowspan="7">Retatrutide</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$160.00</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">RT10</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$220.00</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">RT15</td>
+            <td>15mg * 10 vials</td>
+            <td class="price">$270.00</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">RT20</td>
+            <td>20mg * 10 vials</td>
+            <td class="price">$300.00</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">RT30</td>
+            <td>30mg * 10 vials</td>
+            <td class="price">$380.00</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">RT40</td>
+            <td>40mg * 10 vials</td>
+            <td class="price">$460.00</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">RT60</td>
+            <td>60mg * 10 vials</td>
+            <td class="price">$640.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">P41</td>
+            <td class="product-name" rowspan="1">PT-141</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$190.00</td>
+            <td class="category-name" rowspan="1">Vitality + Hormonal</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">SK5</td>
+            <td class="product-name" rowspan="2">Selank</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$130.00</td>
+            <td class="category-name" rowspan="2">Cognitive + Mood</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">SK10</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$170.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">GND2</td>
+            <td class="product-name" rowspan="1">Gonadorelin Acetate</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$150.00</td>
+            <td class="category-name" rowspan="1">Vitality + Hormonal</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">LB10</td>
+            <td class="product-name" rowspan="1">Lemon Bottle</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$170.00</td>
+            <td class="category-name" rowspan="1">Weight loss</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">XA5</td>
+            <td class="product-name" rowspan="2">Semax</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$130.00</td>
+            <td class="category-name" rowspan="2">Cognitive + Mood</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">XA10</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$170.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">SM05</td>
+            <td class="product-name" rowspan="2">Sermorelin</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$160.00</td>
+            <td class="category-name" rowspan="2">Vitality + Hormonal</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">SM010</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$240.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">DS5</td>
+            <td class="product-name" rowspan="3">DSIP</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$150.00</td>
+            <td class="category-name" rowspan="3">Cognitive + Mood</td>
+          </tr>
+          <tr class="row-tint-a">
+            <td class="sku">DS10</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$200.00</td>
+          </tr>
+          <tr class="row-tint-a">
+            <td class="sku">DS15</td>
+            <td>15mg * 10 vials</td>
+            <td class="price">$250.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">OT2</td>
+            <td class="product-name" rowspan="3">Oxytocin Acetate</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$130.00</td>
+            <td class="category-name" rowspan="3">Vitality + Hormonal</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">OT5</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$150.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">OT10</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$190.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">ET10</td>
+            <td class="product-name" rowspan="3">Epithalon</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$150.00</td>
+            <td class="category-name" rowspan="3">Mitochondria + Longevity</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">ET40</td>
+            <td>40mg * 10 vials</td>
+            <td class="price">$330.00</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">ET50</td>
+            <td>50mg * 10 vials</td>
+            <td class="price">$360.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">BC5</td>
+            <td class="product-name" rowspan="3">BPC-157</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$150.00</td>
+            <td class="category-name" rowspan="6">Recovery + Healing</td>
+          </tr>
+          <tr class="row-tint-a">
+            <td class="sku">BC10</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$190.00</td>
+          </tr>
+          <tr class="row-tint-a">
+            <td class="sku">BC20</td>
+            <td>20mg * 10 vials</td>
+            <td class="price">$270.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">BB10</td>
+            <td class="product-name" rowspan="1">BPC-157 5MG + TB-500 5MG</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$280.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">BB20</td>
+            <td class="product-name" rowspan="1">BPC-157 10MG + TB-500 10MG</td>
+            <td>20mg * 10 vials</td>
+            <td class="price">$410.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">XS20</td>
+            <td class="product-name" rowspan="1">Semax 10MG + Selank 10MG</td>
+            <td>20mg * 10 vials</td>
+            <td class="price">$280.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">2S10</td>
+            <td class="product-name" rowspan="2">SS-31</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$230.00</td>
+            <td class="category-name" rowspan="2">Mitochondria + Longevity</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">2S50</td>
+            <td>50mg * 10 vials</td>
+            <td class="price">$640.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">CND5</td>
+            <td class="product-name" rowspan="2">CJC-1295 without DAC</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$230.00</td>
+            <td class="category-name" rowspan="6">Body Recomp</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">CND10</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$340.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">CP10</td>
+            <td class="product-name" rowspan="1">CJC-1295 without DAC 5MG + IPA 5MG</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$280.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">CD2</td>
+            <td class="product-name" rowspan="3">CJC-1295 with DAC</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$240.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">CD5</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$370.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">CD10</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$670.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">BT10</td>
+            <td class="product-name" rowspan="1">TB500 (Thymosin Br Acetate)</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$330.00</td>
+            <td class="category-name" rowspan="1">Recovery + Healing</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">5AD</td>
+            <td class="product-name" rowspan="2">AOD9604</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$240.00</td>
+            <td class="category-name" rowspan="4">Body Recomp</td>
+          </tr>
+          <tr class="row-tint-a">
+            <td class="sku">10AD</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$380.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">IG01</td>
+            <td class="product-name" rowspan="2">IGF-1LR3</td>
+            <td>0.1mg * 10 vials</td>
+            <td class="price">$130.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">IG1</td>
+            <td>1mg * 10 vials</td>
+            <td class="price">$440.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">TSM5</td>
+            <td class="product-name" rowspan="3">Tesamorelin</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$260.00</td>
+            <td class="category-name" rowspan="3">Weight Loss</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">TSM10</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$380.00</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">TSM20</td>
+            <td>20mg * 10 vials</td>
+            <td class="price">$730.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">IP5</td>
+            <td class="product-name" rowspan="2">Ipamorelin</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$150.00</td>
+            <td class="category-name" rowspan="4">Vitality + Hormonal</td>
+          </tr>
+          <tr class="row-tint-a">
+            <td class="sku">IP10</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$200.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">HX2</td>
+            <td class="product-name" rowspan="2">Hexarelin Acetate</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$190.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">HX5</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$240.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">CU50</td>
+            <td class="product-name" rowspan="2">GHK-CU</td>
+            <td>50mg * 10 vials</td>
+            <td class="price">$730.00</td>
+            <td class="category-name" rowspan="2">Beauty + Skin + Hair</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">CU100</td>
+            <td>100mg * 10 vials</td>
+            <td class="price">$160.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">G10K</td>
+            <td class="product-name" rowspan="1">HCG 10,000IU</td>
+            <td>10000IU * 10 vials</td>
+            <td class="price">$370.00</td>
+            <td class="category-name" rowspan="3">Vitality + Hormonal</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">G5K</td>
+            <td class="product-name" rowspan="1">HCG 5,000IU</td>
+            <td>5000IU * 10 vials</td>
+            <td class="price">$210.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">G2K</td>
+            <td class="product-name" rowspan="1">HCG 2,000IU</td>
+            <td>2000IU * 10 vials</td>
+            <td class="price">$160.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">AU50</td>
+            <td class="product-name" rowspan="2">AHK-CU</td>
+            <td>50mg * 10 vials</td>
+            <td class="price">$190.00</td>
+            <td class="category-name" rowspan="2">Beauty + Skin + Hair</td>
+          </tr>
+          <tr class="row-tint-a">
+            <td class="sku">AU100</td>
+            <td>100mg * 10 vials</td>
+            <td class="price">$250.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">KS5</td>
+            <td class="product-name" rowspan="2">Kisspeptin-10</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$170.00</td>
+            <td class="category-name" rowspan="2">Vitality + Hormonal</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">KS10</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$220.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">TY10</td>
+            <td class="product-name" rowspan="1">Thymalin</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$180.00</td>
+            <td class="category-name" rowspan="20"></td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">TA5</td>
+            <td class="product-name" rowspan="2">Thymosin Alpha-1</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$230.00</td>
+          </tr>
+          <tr class="row-tint-a">
+            <td class="sku">TA10</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$380.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">MS10</td>
+            <td class="product-name" rowspan="2">MOTS-C</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$190.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">MS40</td>
+            <td>40mg * 10 vials</td>
+            <td class="price">$400.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">F410</td>
+            <td class="product-name" rowspan="1">FOXO4</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$720.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">MT1</td>
+            <td class="product-name" rowspan="1">Melanotan 1</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$140.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">ML10</td>
+            <td class="product-name" rowspan="1">Melanotan 2</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$130.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">GT1500</td>
+            <td class="product-name" rowspan="1">Glutathione</td>
+            <td>1500mg * 10 vials</td>
+            <td class="price">$170.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">5AM</td>
+            <td class="product-name" rowspan="3">5-amino-1mq</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$140.00</td>
+          </tr>
+          <tr class="row-tint-a">
+            <td class="sku">10AM</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$170.00</td>
+          </tr>
+          <tr class="row-tint-a">
+            <td class="sku">50AM</td>
+            <td>50mg * 10 vials</td>
+            <td class="price">$220.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">CGL5</td>
+            <td class="product-name" rowspan="3">Cagrilintide</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$280.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">CGL10</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$390.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">CGL20</td>
+            <td>20mg * 10 vials</td>
+            <td class="price">$640.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">RA10</td>
+            <td class="product-name" rowspan="1">Ara-290</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$140.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">NP810</td>
+            <td class="product-name" rowspan="1">snap-8</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$150.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">NJ100</td>
+            <td class="product-name" rowspan="3">NAD+</td>
+            <td>100mg * 10 vials</td>
+            <td class="price">$150.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">NJ500</td>
+            <td>500mg * 10 vials</td>
+            <td class="price">$190.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">NJ1000</td>
+            <td>1000mg * 10 vials</td>
+            <td class="price">$260.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">PRO20</td>
+            <td class="product-name" rowspan="1">Alprostadil</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$150.00</td>
+            <td class="category-name" rowspan="1">Vitality + Hormonal</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">BBG70</td>
+            <td class="product-name" rowspan="1">(GLOW) - BPC157 10mg + GHKC-CU 50mg + TB500 10mg</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$420.00</td>
+            <td class="category-name" rowspan="25"></td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">SUR10</td>
+            <td class="product-name" rowspan="1">Survodutide</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$590.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">CS10</td>
+            <td class="product-name" rowspan="1">Cagrilintide 5mg + Semaglutide 5mg</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$330.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">RC10</td>
+            <td class="product-name" rowspan="1">Retatrutide 5mg + Cagrilintide 5mg</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$380.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">VP5</td>
+            <td class="product-name" rowspan="2">VIP</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$230.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">VP10</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$330.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">KP10</td>
+            <td class="product-name" rowspan="2">KPV</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$170.00</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">KP30</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$380.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">AD5</td>
+            <td class="product-name" rowspan="2">Adamax</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$410.00</td>
+          </tr>
+          <tr class="row-tint-a">
+            <td class="sku">AD10</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$650.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">PE10</td>
+            <td class="product-name" rowspan="1">PE 22-28</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$140.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">PIN5</td>
+            <td class="product-name" rowspan="3">Pinealon</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$130.00</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">PIN10</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$180.00</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">PIN20</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$280.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">PN5</td>
+            <td class="product-name" rowspan="2">PNC 27</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$224.00</td>
+          </tr>
+          <tr class="row-tint-a">
+            <td class="sku">PN10</td>
+            <td>2mg * 10 vials</td>
+            <td class="price">$410.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">KL80</td>
+            <td class="product-name" rowspan="1">(KLOW) - BPC 157 10mg + GHK-CU 50mg + TB500 10mg + KPV 10mg</td>
+            <td>80mg * 10 vials</td>
+            <td class="price">$470.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">LAX20</td>
+            <td class="product-name" rowspan="1">Cartalax</td>
+            <td>20mg * 10 vials</td>
+            <td class="price">$290.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">P210</td>
+            <td class="product-name" rowspan="1">P21</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$200.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">BR20</td>
+            <td class="product-name" rowspan="1">Bronchogen</td>
+            <td>20mg * 10 vials</td>
+            <td class="price">$290.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">LL375</td>
+            <td class="product-name" rowspan="2">LL37</td>
+            <td>5mg * 10 vials</td>
+            <td class="price">$220.00</td>
+          </tr>
+          <tr class="row-tint-c">
+            <td class="sku">LL3710</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$380.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">VE20</td>
+            <td class="product-name" rowspan="1">Vesugen</td>
+            <td>20mg * 10 vials</td>
+            <td class="price">$290.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">MA10</td>
+            <td class="product-name" rowspan="1">Matrixyl</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$150.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">LC600</td>
+            <td class="product-name" rowspan="1">L-Carnitine 500mg</td>
+            <td>10ml * 10 vials</td>
+            <td class="price">$170.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">BA03</td>
+            <td class="product-name" rowspan="2">BAC Water</td>
+            <td>3ml * 10 vials</td>
+            <td class="price">$20.00</td>
+            <td class="category-name" rowspan="5">Reconstitution Supplies</td>
+          </tr>
+          <tr class="row-tint-a">
+            <td class="sku">BA10</td>
+            <td>10ml * 10 vials</td>
+            <td class="price">$30.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">AA03</td>
+            <td class="product-name" rowspan="2">Acetic acid 0.6%</td>
+            <td>3ml * 10 vials</td>
+            <td class="price">$20.00</td>
+          </tr>
+          <tr class="row-tint-b">
+            <td class="sku">AA10</td>
+            <td>10ml * 10 vials</td>
+            <td class="price">$30.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">WA10</td>
+            <td class="product-name" rowspan="1">Sterile water 10ml</td>
+            <td>10ml * 10 vials</td>
+            <td class="price">$30.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">B12</td>
+            <td class="product-name" rowspan="1">B12</td>
+            <td>10mg * 10 vials</td>
+            <td class="price">$200.00</td>
+            <td class="category-name" rowspan="5"></td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">LC526</td>
+            <td class="product-name" rowspan="1">Lipo-C [FAT BLASTER]
+L CARINTINE 300MG
+METHIONINE 25MG
+INOSITOL 50MG
+CHOLINE 50MG
+B12 1MG
+B6 50MG
+NADH 50MG</td>
+            <td>10ml * 526mg/ml/vial</td>
+            <td class="price">$330.00</td>
+          </tr>
+          <tr class="row-tint-c group-divider">
+            <td class="sku">LC120</td>
+            <td class="product-name" rowspan="1">Lipo-C
+Methonine 15mg
+Choline Chloride 50mg
+L-Carnitine 50mg
+Dexpanthenol 5mg</td>
+            <td>10ml * 120mg/ml/vial</td>
+            <td class="price">$130.00</td>
+          </tr>
+          <tr class="row-tint-a group-divider">
+            <td class="sku">LC216</td>
+            <td class="product-name" rowspan="1">L-Carnitine 20mg
+L-Arginine 20mg
+Methionine 25mg
+Inositol 50mg
+Choline 50mg
+B6 (Pyridoxine) 25mg
+B5 (Dexpanthenol) 25mg
+B12 (Methylcobalamin) 1mg</td>
+            <td>10ml * 216mg/ml/vial</td>
+            <td class="price">$140.00</td>
+          </tr>
+          <tr class="row-tint-b group-divider">
+            <td class="sku">SHB</td>
+            <td class="product-name" rowspan="1">SUPER Human Blend
+L-Arginine 110mg
+L-Ornithin 110mg
+L-Citruline 120mg
+L-Lysine 70mg
+L-Glutamine 40mg
+L-Proline 60mg
+L-Taurine 60mg
+L-Carnitine 220mg
+NAC 75mg</td>
+            <td>10ml * 865mg/ml/vial</td>
+            <td class="price">$260.00</td>
+          </tr>
+
         </tbody>
       </table>
     </div>
