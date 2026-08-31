@@ -1,0 +1,392 @@
+<title>Toy Train Catalog</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    --bg: #F5F6F8;
+    --surface: #FFFFFF;
+    --surface-2: #FAFBFC;
+    --border: #DCE0E6;
+    --border-strong: #C4CAD2;
+    --text: #171B21;
+    --text-muted: #5A6472;
+    --text-faint: #8890999;
+    --accent: #2A6F6B;
+    --accent-strong: #1E5551;
+    --accent-soft: #E4F0EE;
+    --shadow: 0 1px 2px rgba(20, 30, 30, 0.04), 0 6px 20px rgba(20, 30, 30, 0.05);
+    --row-set: #EAF2F1;
+    --row-car: #FFFFFF;
+    --row-bridge: #F7F1E6;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F1417;
+      --surface: #161C20;
+      --surface-2: #131820;
+      --border: #2A3339;
+      --border-strong: #3A444B;
+      --text: #EDEFF1;
+      --text-muted: #9AA5AD;
+      --text-faint: #6E7880;
+      --accent: #4FBDB5;
+      --accent-strong: #6FD2CA;
+      --accent-soft: #17282A;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+      --row-set: #17262A;
+      --row-car: #161C20;
+      --row-bridge: #262019;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0F1417;
+    --surface: #161C20;
+    --surface-2: #131820;
+    --border: #2A3339;
+    --border-strong: #3A444B;
+    --text: #EDEFF1;
+    --text-muted: #9AA5AD;
+    --text-faint: #6E7880;
+    --accent: #4FBDB5;
+    --accent-strong: #6FD2CA;
+    --accent-soft: #17282A;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+    --row-set: #17262A;
+    --row-car: #161C20;
+    --row-bridge: #262019;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  /* ---------- Editable zone notice ---------- */
+  .edit-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    padding: 10px 16px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+  }
+  .edit-note strong { color: var(--accent-strong); }
+
+  /* ---------- Header ---------- */
+  header.masthead {
+    margin-bottom: 40px;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+
+  .business-name {
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    text-wrap: balance;
+  }
+
+  .business-name[contenteditable="true"]:focus,
+  [contenteditable="true"]:focus {
+    outline: 2px dashed var(--accent);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+
+  .tagline {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin: 0;
+    max-width: 62ch;
+  }
+
+  /* ---------- Contact cards ---------- */
+  .contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  @media (max-width: 620px) {
+    .contacts { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    box-shadow: var(--shadow);
+  }
+
+  .card-role {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 6px;
+  }
+
+  .card-name {
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin: 0 0 14px;
+  }
+
+  .card dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 12px;
+  }
+
+  .card dt {
+    font-size: 0.8rem;
+    color: var(--text-faint);
+    font-weight: 500;
+  }
+
+  .card dd {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--text);
+  }
+
+  .card dd a {
+    color: var(--accent-strong);
+    text-decoration: none;
+  }
+  .card dd a:hover { text-decoration: underline; }
+
+  /* ---------- Table ---------- */
+  .catalog-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .catalog-heading h2 {
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .catalog-count {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-faint);
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    background: var(--surface);
+  }
+
+  table.catalog {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.94rem;
+    min-width: 620px;
+  }
+
+  table.catalog thead th {
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: var(--surface-2);
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border-strong);
+    white-space: nowrap;
+  }
+
+  table.catalog td {
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+    color: var(--text);
+  }
+
+  table.catalog tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  td.sku {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    color: var(--accent-strong);
+    font-size: 0.88rem;
+  }
+
+  td.product-name {
+    font-weight: 600;
+    border-right: 1px solid var(--border);
+  }
+
+  td.category-name {
+    color: var(--text-muted);
+    border-left: 1px solid var(--border);
+  }
+
+  /* Alternate a background per product group so the eye can find a
+     section instantly while scrolling a long catalog. */
+  tr.row-set td { background: var(--row-set); }
+  tr.row-car td { background: var(--row-car); }
+  tr.row-bridge td { background: var(--row-bridge); }
+
+  td.price {
+    font-family: 'IBM Plex Mono', monospace;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    font-weight: 600;
+  }
+
+  .group-divider td {
+    border-top: 2px solid var(--border-strong);
+  }
+
+  [contenteditable="true"] { cursor: text; }
+</style>
+
+<div class="page">
+
+  <div class="edit-note">
+    <strong>Editable page</strong> — open this file in a text/HTML editor and replace the bracketed placeholders (business name, contact details, products) with your own.
+  </div>
+
+  <header class="masthead">
+    <p class="eyebrow">Wholesale Product Catalog</p>
+    <h1 class="business-name">[Your Business Name]</h1>
+    <p class="tagline">[One line about what you sell — e.g. "Wholesale kids' wooden train sets and accessories."]</p>
+  </header>
+
+  <section class="contacts" aria-label="Contacts">
+    <div class="card">
+      <p class="card-role">Owner</p>
+      <p class="card-name">[Your Name]</p>
+      <dl>
+        <dt>Phone</dt><dd><a href="tel:+10000000000">[Phone Number]</a></dd>
+        <dt>Email</dt><dd><a href="mailto:you@example.com">[you@example.com]</a></dd>
+        <dt>Location</dt><dd>[City, State]</dd>
+      </dl>
+    </div>
+    <div class="card">
+      <p class="card-role">Business Partner</p>
+      <p class="card-name">[Partner's Name]</p>
+      <dl>
+        <dt>Phone</dt><dd><a href="tel:+10000000000">[Phone Number]</a></dd>
+        <dt>Email</dt><dd><a href="mailto:partner@example.com">[partner@example.com]</a></dd>
+        <dt>Location</dt><dd>[City, State]</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section aria-label="Product catalog">
+    <div class="catalog-heading">
+      <h2>Products</h2>
+      <span class="catalog-count">8 SKUs</span>
+    </div>
+
+    <div class="table-wrap">
+      <table class="catalog">
+        <thead>
+          <tr>
+            <th style="width:12%">SKU</th>
+            <th style="width:20%">Product</th>
+            <th style="width:23%">Specification</th>
+            <th style="width:15%">Price</th>
+            <th style="width:30%">Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-set">
+            <td class="sku">KT1</td>
+            <td class="product-name" rowspan="4">Train Set</td>
+            <td>12 Pieces</td>
+            <td class="price">$10.00</td>
+            <td class="category-name" rowspan="4">Kids Toys</td>
+          </tr>
+          <tr class="row-set">
+            <td class="sku">KT2</td>
+            <td>24 Pieces</td>
+            <td class="price">$13.00</td>
+          </tr>
+          <tr class="row-set">
+            <td class="sku">KT3</td>
+            <td>36 Pieces</td>
+            <td class="price">$18.00</td>
+          </tr>
+          <tr class="row-set">
+            <td class="sku">KT4</td>
+            <td>50 Pieces</td>
+            <td class="price">$22.00</td>
+          </tr>
+          <tr class="row-car group-divider">
+            <td class="sku">TC1</td>
+            <td class="product-name">Train Car</td>
+            <td>1 Piece</td>
+            <td class="price">$5.00</td>
+            <td class="category-name" rowspan="4">Kids Toys</td>
+          </tr>
+          <tr class="row-bridge group-divider">
+            <td class="sku">TB1</td>
+            <td class="product-name" rowspan="3">Train Bridge</td>
+            <td>1 Piece</td>
+            <td class="price">$4.00</td>
+          </tr>
+          <tr class="row-bridge">
+            <td class="sku">TB2</td>
+            <td>1 Piece</td>
+            <td class="price">$7.00</td>
+          </tr>
+          <tr class="row-bridge">
+            <td class="sku">TB3</td>
+            <td>1 Piece</td>
+            <td class="price">$22.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</div>
