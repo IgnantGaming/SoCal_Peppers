@@ -356,29 +356,6 @@ details.detail-block .detail-content strong {
 
   [contenteditable="true"] { cursor: text; }
 </style>
-<script>
-document.getElementById('discord-btn').addEventListener('click', function (e) {
-  e.preventDefault();
-  const inviteCode = 'GVHUrrTmUD';
-  const appLink = `discord://-/invite/${inviteCode}`;
-  const webLink = `https://discord.com/invite/${inviteCode}`;
-
-  // Try the app
-  window.location.href = appLink;
-
-  // If the app didn't take over (tab is still visible after a beat), go to the web version
-  const fallback = setTimeout(function () {
-    if (!document.hidden) {
-      window.location.href = webLink;
-    }
-  }, 1500);
-
-  // If the app DID open, the page loses focus — cancel the fallback
-  window.addEventListener('blur', function () {
-    clearTimeout(fallback);
-  }, { once: true });
-});
-</script>
 
 <div class="page">
 
@@ -496,7 +473,7 @@ document.getElementById('discord-btn').addEventListener('click', function (e) {
       and fast, reliable shipping. If you're someone who wants to see the COAs before you buy — not just take a seller's word for it — this is who I trust.</p>
 
       <p>They also run an active Discord community where you can talk openly about products, protocols, fitness, and lifestyle changes with people who actually know what 
-      they're doing — no judgment, just good conversation. <a href="#" id="discord-btn">Join their Discord</a></p>
+      they're doing — no judgment, just good conversation. <a href="https://discord.com/invite/GVHUrrTmUD" target="_blank" rel="noopener">Join their Discord</a></p>
 
 
      <p><strong> Use code IGNANT at checkout for a discount, and check them out at <a href="https://origin-labs.org" target="_blank">Origin-Labs</a></strong></p>
