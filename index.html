@@ -1,62 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting to Origin Labs...</title>
-  <meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peptide Research Guide | Ignant x Origin Labs</title>
+<meta name="description" content="What peptides are, what they're studied for, and how to get 15% off research-grade peptides from Origin Labs with code IGNANT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f3ee; --card:#fffdfa; --ink:#0b0b0b; --muted:#6b6862;
+  --gold:#c9a13b; --gold-d:#a8842a; --line:#e3dfd6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:'Archivo Black','Poppins',sans-serif;letter-spacing:-.01em;line-height:1.1}
 
-  <!-- Instant redirect (no JavaScript needed) -->
-  <meta http-equiv="refresh" content="0; url=https://www.origin-labs.org/go/ignant">
-  <link rel="canonical" href="https://www.origin-labs.org/go/ignant">
+.ticker{background:#000;color:#fff;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;text-align:center;padding:10px 12px}
+.ticker span{margin:0 14px}
+.ticker i{display:inline-block;width:5px;height:5px;background:var(--gold);border-radius:50%;vertical-align:middle}
 
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background: #0b0b0f;
-      color: #f2f2f5;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      text-align: center;
-      padding: 24px;
-      box-sizing: border-box;
-    }
-    .spinner {
-      width: 36px;
-      height: 36px;
-      border: 3px solid rgba(255, 255, 255, 0.15);
-      border-top-color: #ffffff;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin-bottom: 20px;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    p {
-      margin: 0 0 8px;
-      font-size: 1.05rem;
-    }
-    a {
-      color: #8ab4ff;
-      font-size: 0.9rem;
-    }
-  </style>
+nav{background:#fffdfa;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{font-family:'Archivo Black',sans-serif;font-size:26px;text-decoration:none}
+.brand b{color:var(--gold)}
+.brand small{display:block;font-family:'Poppins';font-size:8px;letter-spacing:.3em;color:var(--muted);margin-top:-4px;font-weight:500}
+.links{display:flex;gap:26px;font-size:14px;font-weight:500}
+.links a{text-decoration:none;color:#444;padding:22px 0;border-bottom:2px solid transparent}
+.links a:hover{color:var(--ink);border-color:var(--gold)}
+.btn{display:inline-block;background:#000;color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:13px 26px;border-radius:999px;transition:.2s;border:0;cursor:pointer}
+.btn:hover{background:var(--gold-d);transform:translateY(-1px)}
+.btn.gold{background:var(--gold);color:#000}
+.btn.gold:hover{background:#000;color:#fff}
+.btn.ghost{background:transparent;color:#000;border:1.5px solid #000}
+.btn.ghost:hover{background:#000;color:#fff}
+.nav-cta{padding:10px 20px}
+@media(max-width:820px){.links{display:none}}
+
+.hero{padding:72px 0 56px}
+.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:14px}
+.hero h1{font-size:clamp(38px,6vw,72px);max-width:820px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p.lead{max-width:640px;margin:22px 0 30px;color:#4a4842;font-size:17px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.code-pill{display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:var(--card);border:1px dashed var(--gold);border-radius:14px;padding:12px 18px;font-size:14px}
+.code-pill strong{font-family:'Archivo Black';font-size:18px;color:var(--gold-d);letter-spacing:.06em}
+.code-pill button{background:#000;color:#fff;border:0;border-radius:999px;padding:6px 14px;font:600 12px 'Poppins';cursor:pointer}
+
+section{padding:60px 0}
+.sec-head{margin-bottom:34px}
+.sec-head h2{font-size:clamp(28px,4vw,42px)}
+.sec-head p{color:var(--muted);max-width:640px;margin-top:10px}
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;transition:.2s}
+.card:hover{box-shadow:0 12px 30px rgba(0,0,0,.07);transform:translateY(-2px)}
+.card h3{font-size:19px;margin-bottom:10px}
+.card p{font-size:14.5px;color:#4a4842}
+.tag{display:inline-block;background:var(--gold);color:#000;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:14px}
+.num{font-family:'Archivo Black';font-size:40px;color:var(--gold);line-height:1}
+
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+@media(max-width:820px){.split{grid-template-columns:1fr}}
+.explain p{margin-bottom:14px;color:#3b3934}
+
+.vial-stage{background:linear-gradient(160deg,#dcd8d0,#efece6);border-radius:26px;padding:40px;display:flex;justify-content:center}
+.vial{width:150px}
+.vial .cap{height:44px;background:linear-gradient(90deg,#8c8c8c,#f4f4f4 45%,#9a9a9a);border-radius:8px 8px 3px 3px;position:relative}
+.vial .cap:after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:10px;background:#2a2a2a}
+.vial .glass{height:210px;margin-top:8px;background:linear-gradient(90deg,rgba(255,255,255,.75),rgba(255,255,255,.25) 40%,rgba(255,255,255,.7));border:2px solid rgba(180,180,180,.6);border-radius:10px 10px 18px 18px;position:relative;overflow:hidden}
+.vial .label{position:absolute;left:0;right:0;top:44px;height:100px;background:#fff;text-align:center;padding-top:14px;box-shadow:0 0 0 1px #eee}
+.vial .label b{font-family:'Archivo Black';font-size:22px}
+.vial .label b i{color:var(--gold);font-style:normal}
+.vial .label small{display:block;font-size:7px;letter-spacing:.3em;color:var(--muted)}
+.vial .label span{display:block;margin:10px 14px 0;border:1px solid #ccc;font-size:9px;padding:3px}
+.vial .powder{position:absolute;left:0;right:0;bottom:0;height:34px;background:#f7f7f7}
+
+.step{display:flex;gap:18px}
+.step .num{min-width:52px}
+
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{margin-top:12px;color:#4a4842;font-size:14.5px}
+
+.banner{background:#000;color:#fff;border-radius:30px;padding:54px 40px;text-align:center}
+.banner h2{font-size:clamp(28px,4vw,44px);margin-bottom:14px}
+.banner h2 em{font-style:normal;color:var(--gold)}
+.banner p{color:#cfcac0;max-width:580px;margin:0 auto 26px}
+
+footer{padding:50px 0 60px;border-top:1px solid var(--line);margin-top:30px;font-size:12.5px;color:var(--muted)}
+footer p{margin-bottom:12px;max-width:900px}
+footer strong{color:var(--ink)}
+</style>
 </head>
 <body>
-  <div class="spinner" aria-hidden="true"></div>
-  <p>Taking you to Origin Labs&hellip;</p>
-  <a href="https://www.origin-labs.org/go/ignant">Click here if you aren't redirected</a>
 
-  <!-- JavaScript fallback -->
-  <script>
-    window.location.replace("https://www.origin-labs.org/go/ignant");
-  </script>
+<div class="ticker">
+  <span>Free priority U.S. shipping over $100</span><i></i>
+  <span>Third-party tested</span><i></i>
+  <span>For research use only</span>
+</div>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Ignant<b>.</b><small>PEPTIDE RESEARCH GUIDE</small></a>
+    <div class="links">
+      <a href="#peptides">What are peptides</a>
+      <a href="#known-for">Research areas</a>
+      <a href="#why">Why Origin Labs</a>
+      <a href="#community">Community</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a class="btn nav-cta" href="https://www.origin-labs.org/go/ignant" target="_blank" rel="sponsored noopener">Shop -15%</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Independent Origin Labs affiliate</div>
+    <h1>Peptide research, <em>made simple.</em></h1>
+    <p class="lead">New to peptides? Start here. Learn what they are and what researchers study them for, then shop Origin Labs' third-party tested catalog with <strong>15% off every order</strong> plus any current site specials.</p>
+    <div class="cta-row">
+      <a class="btn gold" href="https://www.origin-labs.org/go/ignant" target="_blank" rel="sponsored noopener">Shop Origin Labs, 15% off</a>
+      <a class="btn ghost" href="    https://discord.gg/nvsx24prN7" target="_blank" rel="noopener">Join the Discord</a> 
+    </div>
+    <div class="code-pill">
+      <span>Affiliate code</span><strong>IGNANT</strong>
+      <button onclick="navigator.clipboard.writeText('ignant');this.textContent='Copied'">Copy</button>
+    </div>
+  </div>
+</header>
+
+<section id="peptides">
+  <div class="wrap split">
+    <div class="explain">
+      <div class="eyebrow">The basics</div>
+      <h2 style="font-size:clamp(28px,4vw,42px);margin-bottom:20px">What are peptides?</h2>
+      <p>Peptides are short chains of amino acids, the same building blocks that make up proteins. By convention, a chain of roughly 2 to 50 amino acids is a peptide; anything longer is usually called a protein.</p>
+      <p>Your body already makes thousands of them. Many act as signaling molecules, telling cells and tissues what to do. Insulin, oxytocin and glucagon are all well-known examples.</p>
+      <p>Because they are so specific, peptides are a major focus of biochemical and pharmaceutical research. Scientists study synthetic versions in the lab to understand pathways involved in metabolism, growth signaling, tissue repair and cellular aging.</p>
+      <p>Research peptides are typically supplied <strong>lyophilized</strong> (freeze-dried powder) in sealed vials, which keeps them stable until they are reconstituted for laboratory work.</p>
+    </div>
+    <div class="vial-stage" aria-hidden="true">
+      <div class="vial">
+        <div class="cap"></div>
+        <div class="glass">
+          <div class="label"><b>Peptide<i>.</i></b><small>RESEARCH GRADE</small><span>Lyophilized · COA</span></div>
+          <div class="powder"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="known-for">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">What they're known for</div>
+      <h2>Common research areas</h2>
+      <p>These are the categories you'll see across Origin Labs' catalog and in published literature. Descriptions reflect areas of scientific interest, not treatment claims.</p>
+    </div>
+    <div class="grid g4">
+      <div class="card"><span class="tag">Metabolic</span><h3>Metabolic research</h3><p>Studies of incretin and related pathways involved in glucose handling, appetite signaling and energy balance. Approved medications in this class exist and are available only through licensed providers.</p></div>
+      <div class="card"><span class="tag">GH</span><h3>GH research</h3><p>Peptides such as tesamorelin are studied for how they interact with growth hormone-releasing pathways. Tesamorelin itself is an FDA-approved drug for a specific medical use.</p></div>
+      <div class="card"><span class="tag">Regenerative</span><h3>Regenerative research</h3><p>Lab models of tissue repair, recovery and inflammation signaling. One of the most actively discussed areas in the peptide research community.</p></div>
+      <div class="card"><span class="tag">Dermal</span><h3>Dermal research</h3><p>Focused on skin biology: collagen, wound closure and cellular renewal in lab settings. Copper peptides such as GHK-Cu are a well-known example.</p></div>
+    </div>
+
+    <div class="card" style="margin-top:20px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between">
+      <div style="max-width:720px">
+        <span class="tag">Spotlight</span>
+        <h3>GHK-Cu (copper tripeptide-1)</h3>
+        <p>A small, naturally occurring peptide that binds copper. It is one of the most researched peptides in dermal and cellular studies, and it's the compound new Discord members can claim for free to kick-start their research.</p>
+      </div>
+      <a class="btn" href="    https://discord.gg/nvsx24prN7" target="_blank" rel="noopener">Claim free GHK-Cu</a>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Why Origin Labs</div>
+      <h2>Quality, transparency, value.</h2>
+    </div>
+    <div class="grid g3">
+      <div class="card"><div class="num">15%</div><h3 style="margin-top:12px">Off every order</h3><p>Use my link or code <strong>ignant</strong> and every shopper gets 15% off, on top of any specials or deals running on the site.</p></div>
+      <div class="card"><div class="num">$100</div><h3 style="margin-top:12px">Free shipping</h3><p>Free priority U.S. shipping on all orders over $100.</p></div>
+      <div class="card"><div class="num">3rd</div><h3 style="margin-top:12px">Party tested</h3><p>Per-batch Certificates of Analysis, so you can review the testing before you buy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="community">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Community</div>
+      <h2 style="font-size:clamp(28px,4vw,42px);margin-bottom:18px">You won't be researching alone.</h2>
+      <p style="color:#3b3934;margin-bottom:14px">Origin Labs runs a strong Discord community with shared research documentation and experienced researchers who are happy to help newcomers find their footing.</p>
+      <p style="color:#3b3934;margin-bottom:22px">Find <strong>IgnantGaming</strong> on Discord for help in the peptide research space. I'm an Origin Labs affiliate and can also assist locals in the <strong>Chula Vista</strong> area.</p>
+      <a class="btn gold" href="    https://discord.gg/nvsx24prN7" target="_blank" rel="noopener">Join the Discord</a>
+    </div>
+    <div class="card">
+      <h3>How to get started</h3>
+      <div class="step" style="margin:18px 0"><div class="num">1</div><p><strong>Join the Discord.</strong> Claim your free GHK-Cu to kick-start your research.</p></div>
+      <div class="step" style="margin:18px 0"><div class="num">2</div><p><strong>Browse the catalog</strong> using my link so 15% is applied automatically.</p></div>
+      <div class="step" style="margin:18px 0"><div class="num">3</div><p><strong>Review the COAs</strong> and ask the community anything.</p></div>
+      <a class="btn" href="https://www.origin-labs.org/go/ignant" target="_blank" rel="sponsored noopener">Start shopping</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">FAQ</div><h2>Quick answers</h2></div>
+    <details><summary>How do I get the 15% discount?</summary><p>Click any Origin Labs button on this page, or use code <strong>ignant</strong> at checkout. Any additional site specials still apply.</p></details>
+    <details><summary>Is shipping free?</summary><p>Yes, free priority U.S. shipping on orders over $100.</p></details>
+    <details><summary>Are the products tested?</summary><p>Origin Labs states that its products are third-party tested and publishes per-batch Certificates of Analysis.</p></details>
+    <details><summary>Are these products for human use?</summary><p>No. Origin Labs products are sold strictly as research materials for in-vitro laboratory use. They are not medicines, supplements or cosmetics, and they are not intended for human or animal consumption.</p></details>
+    <details><summary>I have health questions. Where should I go?</summary><p>Talk to a licensed healthcare provider. Nothing on this site is medical advice.</p></details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="banner">
+      <h2>Save <em>15%</em> on research-grade peptides.</h2>
+      <p>Third-party tested, free shipping over $100, and a Discord community that has your back.</p>
+      <a class="btn gold" href="https://www.origin-labs.org/go/ignant" target="_blank" rel="sponsored noopener">Shop with code IGNANT</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Affiliate disclosure:</strong> This is an independent site and is not operated by Origin Labs. I am an Origin Labs affiliate and earn a commission on qualifying purchases made through my links or code, at no extra cost to you.</p>
+    <p><strong>Research use only:</strong> Products sold by Origin Labs are intended for in-vitro laboratory research only and are not for human or animal consumption. They are not approved by the FDA to diagnose, treat, cure or prevent any disease. Statements on this page are educational, have not been evaluated by the FDA, and are not medical advice. Discounts, shipping terms and specials are set by Origin Labs and may change.</p>
+    <p>&copy; <span id="y"></span> Ignant. Origin Labs and its branding belong to their respective owner.</p>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
